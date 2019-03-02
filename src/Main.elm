@@ -22,6 +22,7 @@ import Url exposing (Url)
 import Url.Builder
 import Url.Parser exposing (Parser)
 import View.Campfire
+import View.Stars
 
 
 port pageChanged : () -> Cmd msg
@@ -32,6 +33,7 @@ type alias Model =
     , page : Maybe Route
     , key : Browser.Navigation.Key
     , fireAnimation : View.Campfire.Model
+    , stars : View.Stars.Model
     }
 
 
@@ -41,6 +43,7 @@ type Msg
     | UrlChanged Url
     | UrlRequest Browser.UrlRequest
     | CampfireMsg View.Campfire.Msg
+    | StarsMsg View.Stars.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -88,6 +91,9 @@ update action model =
         CampfireMsg campfireMsg ->
             ( { model | fireAnimation = View.Campfire.update campfireMsg model.fireAnimation }, Cmd.none )
 
+        StarsMsg starsMsg ->
+            ( { model | stars = View.Stars.update starsMsg model.stars }, Cmd.none )
+
 
 view : Model -> Browser.Document Msg
 view ({ page } as model) =
@@ -114,7 +120,8 @@ mainView ({ page } as model) =
                    else
                     Element.row
                   )
-                    []
+                    [ View.Stars.view model.fireAnimation |> Element.behindContent
+                    ]
                     [ View.Campfire.view model.fireAnimation
                         |> Element.el
                             [ Element.width (Element.maximum 200 Element.fill)
@@ -155,6 +162,7 @@ init _ url navigationKey =
       , page = Route.parse url
       , key = navigationKey
       , fireAnimation = View.Campfire.init
+      , stars = View.Stars.init
       }
     , Browser.Dom.getViewport
         |> Task.perform InitialViewport
@@ -166,6 +174,7 @@ subscriptions model =
     Sub.batch
         [ Browser.Events.onResize WindowResized
         , View.Campfire.subscriptions model.fireAnimation |> Sub.map CampfireMsg
+        , View.Stars.subscriptions model.dimensions model.stars |> Sub.map StarsMsg
         ]
 
 

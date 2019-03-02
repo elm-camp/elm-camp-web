@@ -21,3 +21,7 @@ type Dimensions
 
 isMobile (Dimensions { width }) =
     width <= 1000
+
+
+dimensions (Dimensions raw) =
+    raw
