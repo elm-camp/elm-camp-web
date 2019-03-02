@@ -1,4 +1,4 @@
-module Dimensions exposing (Dimensions, init, isMobile)
+module Dimensions exposing (Dimensions, dimensions, init, isMobile)
 
 import Element
 

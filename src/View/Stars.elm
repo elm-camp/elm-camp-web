@@ -85,6 +85,10 @@ type alias Point =
 
 locationGenerator : Dimensions -> Generator Point
 locationGenerator dimensions =
+    let
+        { width, height } =
+            Dimensions.dimensions dimensions
+    in
     Random.map2 Point
         -- (Random.constant 325)
         (Random.float 80 130)
