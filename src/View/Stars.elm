@@ -71,12 +71,14 @@ waterEmitter dimensions delta =
     Particle.init droplet
         |> Particle.withLifetime (normal 0.01 1)
         |> Particle.withLocation (locationGenerator dimensions)
-        -- |> Particle.withLocation (Random.constant { x = 325, y = 500 })
         |> Particle.withDirection (normal (degrees -12) (degrees 12))
-        -- |> Particle.withSpeed (normal 100 30)
-        |> Particle.withSpeed (normal 0 1)
-        |> Particle.withGravity -10
-        |> Random.list (ceiling (delta * (60 / 1000)))
+        |> Particle.withSpeed (normal 0 0.01)
+        |> Particle.withGravity -2
+        |> Random.list 1
+
+
+
+-- |> Random.list (ceiling (delta * (60 / 1000)))
 
 
 type alias Point =
@@ -94,10 +96,11 @@ locationGenerator dimensions =
         (Random.float 0 width)
         -- (Random.float 300 350)
         -- (Random.float 490 510)
-        (Random.float 0 40)
+        (Random.float 0 height)
 
 
 
+-- (Random.float 0 40)
 -- (Random.constant 500)
 -- views
 
@@ -131,6 +134,9 @@ viewStar particle =
                 |> SAttrs.fill
             , SAttrs.transform ("scale(" ++ String.fromFloat (radius / 25) ++ ")")
             , SAttrs.height (String.fromFloat radius)
+
+            -- , SAttrs.opacity "0.5"
+            , lifetimePercent |> String.fromFloat |> SAttrs.opacity
             ]
             []
         ]
