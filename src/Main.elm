@@ -10,6 +10,7 @@ import Element exposing (Element)
 import Element.Background as Background
 import Element.Border
 import Element.Font
+import Element.Lazy
 import Html exposing (Html)
 import Page.Home
 import Route exposing (Route)
@@ -123,7 +124,7 @@ mainView ({ page } as model) =
                             , Element.paddingEach { top = 120, right = 0, bottom = 0, left = 0 }
                             , Element.centerX
                             ]
-                    , Page.Home.view model
+                    , Element.Lazy.lazy Page.Home.view model.dimensions
                     ]
                 ]
                 |> Element.el
