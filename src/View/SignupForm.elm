@@ -46,6 +46,15 @@ fieldGroup values =
 
 fieldGroup_ : { hidden : Bool, defaultValue : Maybe String, display : String, name : String } -> Html msg
 fieldGroup_ options =
+    let
+        valueIfPresent =
+            case options.defaultValue of
+                Just actualValue ->
+                    value actualValue
+
+                Nothing ->
+                    Attr.autocomplete False
+    in
     div
         [ class "mc-field-group"
         , if options.hidden then
@@ -71,6 +80,9 @@ fieldGroup_ options =
             , style "font-family" "Raleway"
             , style "font-size" "20px"
             , style "margin-top" "10px"
+
+            -- , value (options.defaultValue |> Maybe.withDefault "")
+            , valueIfPresent
             ]
             []
         ]

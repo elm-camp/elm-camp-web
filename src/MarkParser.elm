@@ -14,7 +14,7 @@ import View.SignupForm
 import View.Trainer
 
 
-document : Mark.Document ({ model | dimensions : Dimensions } -> Element msg)
+document : Mark.Document ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)
 document =
     let
         defaultText =
@@ -100,7 +100,7 @@ image =
         (Mark.field "description" Mark.string)
 
 
-trainer : Mark.Block ({ model | dimensions : Dimensions } -> Element msg)
+trainer : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)
 trainer =
     Mark.record3 "Trainer"
         (\name imageUrl bio model ->
@@ -111,11 +111,11 @@ trainer =
         (Mark.string |> Mark.field "bio")
 
 
-signup : Mark.Block (model -> Element msg)
+signup : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)
 signup =
     Mark.stub "Signup"
         (\model ->
-            View.SignupForm.view Nothing |> Element.html
+            View.SignupForm.view model.refId |> Element.html
         )
 
 

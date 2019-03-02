@@ -13,7 +13,7 @@ import Style exposing (fontSize, fonts, palette)
 import View.FontAwesome
 
 
-view : Dimensions -> Element.Element msg
+view : { dimensions : Dimensions, refId : Maybe String } -> Element.Element msg
 view model =
     parsedMarkup
         |> (\result ->
@@ -22,7 +22,7 @@ view model =
                         Element.text "Failed to parse."
 
                     Ok element ->
-                        element { dimensions = model }
+                        element model
            )
 
 

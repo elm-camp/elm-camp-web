@@ -102,7 +102,7 @@ view ({ page } as model) =
 mainView : Model -> Html Msg
 mainView ({ page } as model) =
     (case page of
-        Just Route.Home ->
+        Just (Route.Home { refId }) ->
             Element.column
                 [ Element.height Element.fill
                 , Element.alignTop
@@ -124,7 +124,7 @@ mainView ({ page } as model) =
                             , Element.paddingEach { top = 120, right = 0, bottom = 0, left = 0 }
                             , Element.centerX
                             ]
-                    , Element.Lazy.lazy Page.Home.view model.dimensions
+                    , Element.Lazy.lazy Page.Home.view { dimensions = model.dimensions, refId = refId }
                     ]
                 ]
                 |> Element.el
