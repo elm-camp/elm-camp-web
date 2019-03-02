@@ -23,12 +23,18 @@ type alias Msg =
     System.Msg Droplet
 
 
-subscriptions dimensions system =
-    System.sub [ waterEmitter dimensions ] identity system
+subscriptions system =
+    System.sub [] identity system
+
+
+
+-- init : Dimensions -> Model
 
 
 init =
-    System.init (Random.initialSeed 0)
+    -- System.burst (Random.list 100 (Particle.init droplet))
+    System.burst (waterEmitter |> Random.list 100)
+        (System.init (Random.initialSeed 0))
 
 
 update msg system =
@@ -63,33 +69,33 @@ randomColor =
 you can emit the right number of particles. This emitter emits about 60
 particles per second.
 -}
-waterEmitter : Dimensions -> Float -> Generator (List (Particle Droplet))
-waterEmitter dimensions delta =
+waterEmitter : Generator (Particle Droplet)
+waterEmitter =
     Particle.init droplet
-        |> Particle.withLifetime (normal 0.01 1)
-        |> Particle.withLocation (locationGenerator dimensions)
+        -- |> Particle.withLifetime (normal 0.01 1)
+        |> Particle.withLifetime (normal 1000 10000)
+        |> Particle.withLocation locationGenerator
         |> Particle.withDirection (normal (degrees -12) (degrees 12))
-        |> Particle.withSpeed (normal 0 0.01)
-        |> Particle.withGravity -2
-        |> Random.list 1
+
+
+
+-- |> Particle.withSpeed (normal 0 0.01)
+-- |> Particle.withGravity -2
 
 
 type alias Point =
     { x : Float, y : Float }
 
 
-locationGenerator : Dimensions -> Generator Point
-locationGenerator dimensions =
-    let
-        { width, height } =
-            Dimensions.dimensions dimensions
-    in
+locationGenerator : Generator Point
+locationGenerator =
     Random.map2 Point
         -- (Random.constant 325)
-        (Random.float 0 width)
+        -- (Random.float 0 width)
+        (Random.float 0 4000)
         -- (Random.float 300 350)
         -- (Random.float 490 510)
-        (Random.float 0 height)
+        (Random.float 0 500)
 
 
 

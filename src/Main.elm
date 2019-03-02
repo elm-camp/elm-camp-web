@@ -156,7 +156,8 @@ init _ url navigationKey =
       , page = Route.parse url
       , key = navigationKey
       , fireAnimation = View.Campfire.init
-      , stars = View.Stars.init
+      , stars =
+            View.Stars.init
       }
     , Browser.Dom.getViewport
         |> Task.perform InitialViewport
@@ -168,7 +169,7 @@ subscriptions model =
     Sub.batch
         [ Browser.Events.onResize WindowResized
         , View.Campfire.subscriptions model.fireAnimation |> Sub.map CampfireMsg
-        , View.Stars.subscriptions model.dimensions model.stars |> Sub.map StarsMsg
+        , View.Stars.subscriptions model.stars |> Sub.map StarsMsg
         ]
 
 
