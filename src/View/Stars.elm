@@ -60,7 +60,7 @@ randomColor =
 starSystemGenerator : Generator (Particle Star)
 starSystemGenerator =
     Particle.init starGenerator
-        |> Particle.withLifetime (normal 1000 10000)
+        |> Particle.withLifetime (normal 10000 100000)
         |> Particle.withLocation locationGenerator
         |> Particle.withDirection (normal (degrees -12) (degrees 12))
 
@@ -92,6 +92,10 @@ viewStar particle =
 
         lifetimePercent =
             Particle.lifetimePercent particle
+
+        opacity =
+            ((lifetimePercent * 10000) |> round |> modBy 1000 |> toFloat)
+                / 1000
     in
     View.Star.view
         [ color
@@ -100,5 +104,5 @@ viewStar particle =
             |> SAttrs.fill
         , SAttrs.transform ("scale(" ++ String.fromFloat (radius / 25) ++ ")")
         , SAttrs.height (String.fromFloat radius)
-        , lifetimePercent |> String.fromFloat |> SAttrs.opacity
+        , opacity |> String.fromFloat |> SAttrs.opacity
         ]
