@@ -108,12 +108,19 @@ mainView ({ page } as model) =
                 , Element.centerX
                 , Element.width (Element.fill |> Element.maximum 1000)
                 ]
-                [ Element.row [ Element.width Element.fill ]
+                [ (if model.dimensions |> Dimensions.isMobile then
+                    Element.column
+
+                   else
+                    Element.row
+                  )
+                    [ Element.width Element.fill ]
                     [ View.Campfire.view model.fireAnimation
                         |> Element.el
                             [ Element.width (Element.maximum 200 Element.fill)
                             , Element.alignTop
                             , Element.paddingEach { top = 120, right = 0, bottom = 0, left = 0 }
+                            , Element.centerX
                             ]
                     , Page.Home.view model
                     ]
