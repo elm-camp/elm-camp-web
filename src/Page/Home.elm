@@ -45,7 +45,6 @@ There are limited seats! If you sign up here, you'll be the first to know when y
 <>
 
 | Signup
-    Hello!
 
 <>
 

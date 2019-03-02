@@ -109,11 +109,10 @@ trainer =
 
 signup : Mark.Block (model -> Element msg)
 signup =
-    Mark.block "Signup"
-        (\model string ->
+    Mark.stub "Signup"
+        (\model ->
             View.SignupForm.view Nothing |> Element.html
         )
-        Mark.string
 
 
 listStyles : List Int -> List (Element.Attribute msg)
