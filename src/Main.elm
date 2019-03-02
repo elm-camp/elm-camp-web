@@ -118,22 +118,21 @@ mainView ({ page } as model) =
                   ]
                     |> Element.row [ Element.width Element.fill ]
                 ]
-                |> Element.el
-                    [ Background.gradient
-                        { angle = 45
-                        , steps =
-                            [ Element.rgb255 5 46 123
-                            , Element.rgb255 65 135 204
-                            ]
-                        }
-                    , Element.width Element.fill
-                    , Element.height Element.fill
-                    ]
 
         Nothing ->
             Element.text "Page not found!"
     )
-        |> Element.layout []
+        |> Element.layout
+            [ Background.gradient
+                { angle = 45
+                , steps =
+                    [ Element.rgb255 5 46 123
+                    , Element.rgb255 65 135 204
+                    ]
+                }
+            , Element.width Element.fill
+            , Element.height Element.fill
+            ]
 
 
 init : () -> Url.Url -> Browser.Navigation.Key -> ( Model, Cmd Msg )
