@@ -114,17 +114,7 @@ mainView ({ page } as model) =
                    else
                     Element.row
                   )
-                    [ Element.width Element.fill
-                    , Background.gradient
-                        { angle = 45
-                        , steps =
-                            [ Element.rgb255 5 46 123
-                            , Element.rgb255 65 135 204
-                            ]
-                        }
-                    , Element.width Element.fill
-                    , Element.height Element.fill
-                    ]
+                    []
                     [ View.Campfire.view model.fireAnimation
                         |> Element.el
                             [ Element.width (Element.maximum 200 Element.fill)
@@ -135,6 +125,17 @@ mainView ({ page } as model) =
                     , Page.Home.view model
                     ]
                 ]
+                |> Element.el
+                    [ Background.gradient
+                        { angle = 45
+                        , steps =
+                            [ Element.rgb255 5 46 123
+                            , Element.rgb255 65 135 204
+                            ]
+                        }
+                    , Element.width Element.fill
+                    , Element.height Element.fill
+                    ]
 
         Nothing ->
             Element.text "Page not found!"
