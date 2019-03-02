@@ -94,9 +94,8 @@ viewStar particle =
             Particle.lifetimePercent particle
 
         opacity =
-            (((lifetimePercent |> Debug.log "percent") * 100000000) |> round |> modBy 10000 |> toFloat)
+            ((lifetimePercent * 100000000) |> round |> modBy 10000 |> toFloat)
                 / 10000
-                |> Debug.log "result"
     in
     View.Star.view
         [ color
