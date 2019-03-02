@@ -99,7 +99,8 @@ locationGenerator =
 
 view : Model -> Element msg
 view system =
-    System.view viewDroplet
+    -- System.view viewDroplet
+    System.view viewStar
         []
         system
         |> Element.html
@@ -146,6 +147,27 @@ log2 =
 
 viewDroplet : Particle Droplet -> Svg msg
 viewDroplet particle =
+    let
+        { color, radius } =
+            Particle.data particle
+
+        lifetimePercent =
+            Particle.lifetimePercent particle
+    in
+    Svg.rect
+        [ SAttrs.width (String.fromFloat radius)
+        , SAttrs.height (String.fromFloat radius)
+        , SAttrs.transform "rotate(45)"
+        , color
+            |> Color.Generator.adjustSaturation (lifetimePercent * -10)
+            |> Color.toHexString
+            |> SAttrs.fill
+        ]
+        []
+
+
+viewStar : Particle Droplet -> Svg msg
+viewStar particle =
     let
         { color, radius } =
             Particle.data particle
