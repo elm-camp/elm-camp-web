@@ -24,7 +24,7 @@ view maybeReferenceId =
                 ]
             , closingContents
             , div [ attribute "aria-hidden" "true", attribute "style" "position: absolute; left: -5000px;" ]
-                [ input [ name "b_2ea5c30f7f26d370b6b4bb717_94d56d9a7a", attribute "tabindex" "-1", type_ "text", value "" ]
+                [ input [ name "b_2ea5c30f7f26d370b6b4bb717_94d56d9a7a", attribute "tabindex" "-1", type_ "text" ]
                     []
                 ]
             , div [ class "clear" ]
@@ -58,7 +58,6 @@ fieldGroup_ options =
         , div [] []
         , input
             [ type_ "email"
-            , options.defaultValue |> Maybe.withDefault "" |> value
             , name options.name
             , id <| "mce-" ++ options.name
             , style "appearance" "none"
