@@ -54,12 +54,9 @@ droplet =
 
 randomColor : Generator Color
 randomColor =
-    Random.uniform "#FDB703"
-        [ "#F96802"
-        , "#FC9C02"
-        ]
-        |> Random.map Color.fromHexString
-        |> Random.map (Result.withDefault (Color.fromRGB ( 200, 200, 200 )))
+    Random.uniform ( 229, 204, 153 )
+        [ ( 175, 158, 126 ) ]
+        |> Random.map Color.fromRGB
 
 
 {-| Emitters take the delta (in milliseconds )since the last update. This is so
@@ -75,10 +72,6 @@ waterEmitter dimensions delta =
         |> Particle.withSpeed (normal 0 0.01)
         |> Particle.withGravity -2
         |> Random.list 1
-
-
-
--- |> Random.list (ceiling (delta * (60 / 1000)))
 
 
 type alias Point =
