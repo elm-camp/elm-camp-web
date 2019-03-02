@@ -1,0 +1,20 @@
+{
+  "name": "elm-camp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "elm-live src/Main.elm --port 8000 --open --pushstate -- --output elm.js",
+    "test": "npm test",
+    "build": "npm test && elm make src/Main.elm --optimize --output dist/elm.js && elm-minify dist/elm.js && cp -r index.html 404.html CNAME assets dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "elm": "^0.19.0-bugfix2",
+    "elm-live": "^3.2.3",
+    "elm-minify": "^1.5.3",
+    "elm-test": "^0.19.0-rev5"
+  }
+}
