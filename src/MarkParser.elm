@@ -1,5 +1,6 @@
 module MarkParser exposing (document)
 
+import Dimensions exposing (Dimensions)
 import Element exposing (Element)
 import Element.Background as Background
 import Element.Border as Border
@@ -13,7 +14,7 @@ import View.SignupForm
 import View.Trainer
 
 
-document : Mark.Document (model -> Element msg)
+document : Mark.Document ({ model | dimensions : Dimensions } -> Element msg)
 document =
     let
         defaultText =
@@ -98,11 +99,11 @@ image =
         (Mark.field "description" Mark.string)
 
 
-trainer : Mark.Block (model -> Element msg)
+trainer : Mark.Block ({ model | dimensions : Dimensions } -> Element msg)
 trainer =
     Mark.record3 "Trainer"
         (\name imageUrl bio model ->
-            View.Trainer.view True { name = name, imageUrl = imageUrl, bio = bio }
+            View.Trainer.view (Dimensions.isMobile model.dimensions) { name = name, imageUrl = imageUrl, bio = bio }
         )
         (Mark.string |> Mark.field "name")
         (Mark.string |> Mark.field "imageUrl")

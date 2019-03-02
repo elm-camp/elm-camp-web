@@ -114,7 +114,7 @@ mainView ({ page } as model) =
                             , Element.alignTop
                             , Element.paddingEach { top = 120, right = 0, bottom = 0, left = 0 }
                             ]
-                  , Page.Home.view
+                  , Page.Home.view model
                   ]
                     |> Element.row [ Element.width Element.fill ]
                 ]
