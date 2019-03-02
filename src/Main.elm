@@ -55,11 +55,6 @@ update action model =
                     Dimensions.init
                         { width = viewport.width
                         , height = viewport.height
-                        , device =
-                            Element.classifyDevice
-                                { height = round viewport.height
-                                , width = round viewport.width
-                                }
                         }
               }
             , Cmd.none
@@ -71,7 +66,6 @@ update action model =
                     Dimensions.init
                         { width = toFloat width
                         , height = toFloat height
-                        , device = Element.classifyDevice { height = height, width = width }
                         }
               }
             , Cmd.none
@@ -157,7 +151,6 @@ init _ url navigationKey =
             Dimensions.init
                 { width = 0
                 , height = 0
-                , device = Element.classifyDevice { height = 0, width = 0 }
                 }
       , page = Route.parse url
       , key = navigationKey

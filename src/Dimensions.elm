@@ -11,7 +11,6 @@ init attributes =
 type alias Attributes =
     { width : Float
     , height : Float
-    , device : Element.Device
     }
 
 
