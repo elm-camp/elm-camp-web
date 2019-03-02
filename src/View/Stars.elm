@@ -13,6 +13,7 @@ import Random exposing (Generator)
 import Random.Float as R exposing (normal, standardNormal)
 import Svg exposing (Svg)
 import Svg.Attributes as SAttrs
+import View.Star
 
 
 type alias Model =
@@ -124,18 +125,12 @@ viewStar particle =
         lifetimePercent =
             Particle.lifetimePercent particle
     in
-    Svg.g []
-        [ Svg.path
-            [ SAttrs.d "M-5,0c1.632,0.215,3.659,0.44,4.079,0.81C-0.501,1.18-0.215,3.368,0,5C0.215,3.368,0.5,1.18,0.92,0.81 C1.34,0.44,3.368,0.215,5,0C3.368-0.215,1.34-0.44,0.92-0.81C0.5-1.18,0.215-3.368,0-5c-0.215,1.632-0.5,3.82-0.921,4.19 C-1.341-0.44-3.368-0.215-5,0z"
-            , color
-                |> Color.Generator.adjustSaturation (lifetimePercent * -10)
-                |> Color.toHexString
-                |> SAttrs.fill
-            , SAttrs.transform ("scale(" ++ String.fromFloat (radius / 25) ++ ")")
-            , SAttrs.height (String.fromFloat radius)
-
-            -- , SAttrs.opacity "0.5"
-            , lifetimePercent |> String.fromFloat |> SAttrs.opacity
-            ]
-            []
+    View.Star.view
+        [ color
+            |> Color.Generator.adjustSaturation (lifetimePercent * -10)
+            |> Color.toHexString
+            |> SAttrs.fill
+        , SAttrs.transform ("scale(" ++ String.fromFloat (radius / 25) ++ ")")
+        , SAttrs.height (String.fromFloat radius)
+        , lifetimePercent |> String.fromFloat |> SAttrs.opacity
         ]
