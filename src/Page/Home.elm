@@ -38,7 +38,7 @@ markupBody =
 Want to master the tools that make Elm live up to its promise that "if it compiles, it works"? At Elm camp, you'll get 3 days of jam packed learning, led by the authors of some of Elm's most exciting libraries.
 
 | Header
-    Be the First to Find Out!
+    Be the First to Know!
 
 There are limited seats! If you sign up here, you'll be the first to know when you can get your tickets, and we'll give you a special discount as thanks for showing your enthusiasm!
 
