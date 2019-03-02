@@ -108,15 +108,15 @@ mainView ({ page } as model) =
                 , Element.centerX
                 , Element.width (Element.fill |> Element.maximum 1000)
                 ]
-                [ [ View.Campfire.view model.fireAnimation
+                [ Element.row [ Element.width Element.fill ]
+                    [ View.Campfire.view model.fireAnimation
                         |> Element.el
                             [ Element.width (Element.maximum 200 Element.fill)
                             , Element.alignTop
                             , Element.paddingEach { top = 120, right = 0, bottom = 0, left = 0 }
                             ]
-                  , Page.Home.view model
-                  ]
-                    |> Element.row [ Element.width Element.fill ]
+                    , Page.Home.view model
+                    ]
                 ]
 
         Nothing ->
