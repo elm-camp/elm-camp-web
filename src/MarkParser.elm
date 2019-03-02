@@ -101,7 +101,9 @@ image =
 trainer : Mark.Block (model -> Element msg)
 trainer =
     Mark.record3 "Trainer"
-        (\name imageUrl bio model -> View.Trainer.view { name = name, imageUrl = imageUrl, bio = bio })
+        (\name imageUrl bio model ->
+            View.Trainer.view True { name = name, imageUrl = imageUrl, bio = bio }
+        )
         (Mark.string |> Mark.field "name")
         (Mark.string |> Mark.field "imageUrl")
         (Mark.string |> Mark.field "bio")

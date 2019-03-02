@@ -1,13 +1,20 @@
-module View.Trainer exposing (avatar, view)
+module View.Trainer exposing (view)
 
 import Element
 import Style
 
 
-view details =
-    Element.row
-        [ Element.alignLeft
-        ]
+view isMobile details =
+    (if isMobile then
+        Element.column
+            [ Element.centerX
+            ]
+
+     else
+        Element.row
+            [ Element.alignLeft
+            ]
+    )
         [ avatar details
         , bio details
         ]
