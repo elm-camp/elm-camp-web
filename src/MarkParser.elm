@@ -34,6 +34,7 @@ document =
             [ Mark.Default.header
                 [ Font.size 36
                 , Font.family [ Font.typeface "Asap Condensed" ]
+                , Font.center
                 , Font.color (Element.rgb255 255 255 255)
                 ]
                 defaultText
