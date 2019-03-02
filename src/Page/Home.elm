@@ -19,8 +19,7 @@ view =
         |> (\result ->
                 case result of
                     Err message ->
-                        Element.text <|
-                            Debug.toString message
+                        Element.text "Failed to parse."
 
                     Ok element ->
                         element identity
