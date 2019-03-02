@@ -91,10 +91,10 @@ locationGenerator dimensions =
     in
     Random.map2 Point
         -- (Random.constant 325)
-        (Random.float 80 130)
+        (Random.float 0 width)
         -- (Random.float 300 350)
         -- (Random.float 490 510)
-        (Random.float 30 40)
+        (Random.float 0 40)
 
 
 

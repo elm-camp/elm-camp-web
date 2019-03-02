@@ -120,7 +120,7 @@ mainView ({ page } as model) =
                    else
                     Element.row
                   )
-                    [ View.Stars.view model.fireAnimation |> Element.behindContent
+                    [ View.Stars.view model.stars |> Element.behindContent
                     ]
                     [ View.Campfire.view model.fireAnimation
                         |> Element.el
