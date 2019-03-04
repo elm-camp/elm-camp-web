@@ -81,13 +81,18 @@ navbar =
             (\titleElement socialBadgesElement model ->
                 if Dimensions.isMobile model.dimensions then
                     Element.column []
-                        [ titleElement model
-                        , socialBadgesElement model |> Element.el [ Element.centerX ]
-                        ]
+                        [ titleElement model, socialBadgesElement model |> Element.el [ Element.centerX ] ]
 
                 else
-                    Element.row []
-                        [ titleElement model, socialBadgesElement model |> Element.el [ Element.alignRight ] ]
+                    Element.row [ Element.width Element.fill ]
+                        [ titleElement model
+                            |> Element.el
+                                [ Element.width Element.fill
+                                , socialBadgesElement model
+                                    |> Element.el [ Element.alignRight ]
+                                    |> Element.inFront
+                                ]
+                        ]
             )
             title
             socialBadges
