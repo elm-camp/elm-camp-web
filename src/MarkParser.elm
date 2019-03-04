@@ -110,10 +110,13 @@ socialBadges =
         (Mark.manyOf
             [ Mark.record2 "Badge"
                 (\iconClass url ->
-                    View.FontAwesome.styledIcon iconClass
+                    Element.newTabLink
                         [ Font.size 36
                         , Font.color (Element.rgb255 255 255 255)
                         ]
+                        { url = url
+                        , label = View.FontAwesome.icon iconClass
+                        }
                 )
                 (Mark.field "icon" Mark.string)
                 (Mark.field "url" Mark.string)
