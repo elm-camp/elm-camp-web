@@ -10,6 +10,7 @@ import Html.Attributes
 import Mark exposing (Document)
 import Mark.Default
 import Style
+import View.FontAwesome
 import View.SignupForm
 import View.Trainer
 
@@ -49,6 +50,7 @@ document =
                 , Font.family [ Font.typeface "Asap Condensed" ]
                 ]
                 defaultText
+            , socialBadges
             , Mark.Default.list
                 { style = listStyles
                 , icon = Mark.Default.listIcon
@@ -79,6 +81,27 @@ document =
                         (viewEls model)
                 )
                 defaultText
+            ]
+        )
+
+
+socialBadges : Mark.Block (model -> Element msg)
+socialBadges =
+    Mark.block "SocialBadges"
+        (\badges model ->
+            Element.row [ Element.spacing 12 ] badges
+        )
+        (Mark.manyOf
+            [ Mark.record2 "Badge"
+                (\iconClass url ->
+                    View.FontAwesome.styledIcon iconClass
+                        [ Element.centerX
+                        , Font.size 36
+                        , Font.color (Element.rgb255 255 255 255)
+                        ]
+                )
+                (Mark.field "icon" Mark.string)
+                (Mark.field "url" Mark.string)
             ]
         )
 
