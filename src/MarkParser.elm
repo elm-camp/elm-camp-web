@@ -15,12 +15,12 @@ import View.SignupForm
 import View.Trainer
 
 
+defaultText =
+    Mark.Default.textWith Mark.Default.defaultTextStyle
+
+
 document : Mark.Document ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)
 document =
-    let
-        defaultText =
-            Mark.Default.textWith Mark.Default.defaultTextStyle
-    in
     Mark.document
         (\children model ->
             Element.textColumn
@@ -130,11 +130,15 @@ trainer : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String } 
 trainer =
     Mark.record3 "Trainer"
         (\name imageUrl bio model ->
-            View.Trainer.view (Dimensions.isMobile model.dimensions) { name = name, imageUrl = imageUrl, bio = bio }
+            View.Trainer.view (Dimensions.isMobile model.dimensions)
+                { name = name
+                , imageUrl = imageUrl
+                , bio = bio model
+                }
         )
         (Mark.string |> Mark.field "name")
         (Mark.string |> Mark.field "imageUrl")
-        (Mark.string |> Mark.field "bio")
+        (Mark.field "bio" defaultText)
 
 
 signup : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)

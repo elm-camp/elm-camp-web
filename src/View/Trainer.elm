@@ -28,7 +28,9 @@ bio details =
         , Element.width Element.fill
         ]
         [ [ Element.text details.name ] |> Element.paragraph Style.headerAttrs
-        , [ Element.text details.bio ] |> Element.paragraph Style.bodyAttrs
+
+        -- , [ Element.text details.bio ] |> Element.paragraph Style.bodyAttrs
+        , Element.paragraph Style.bodyAttrs details.bio
         ]
 
 
