@@ -79,7 +79,15 @@ navbar =
     Mark.block "Navbar" (\combined -> combined) <|
         Mark.startWith
             (\titleElement socialBadgesElement model ->
-                Element.row [] [ titleElement model, socialBadgesElement model ]
+                if Dimensions.isMobile model.dimensions then
+                    Element.column []
+                        [ titleElement model
+                        , socialBadgesElement model |> Element.el [ Element.centerX ]
+                        ]
+
+                else
+                    Element.row []
+                        [ titleElement model, socialBadgesElement model |> Element.el [ Element.alignRight ] ]
             )
             title
             socialBadges
@@ -98,8 +106,7 @@ socialBadges =
             [ Mark.record2 "Badge"
                 (\iconClass url ->
                     View.FontAwesome.styledIcon iconClass
-                        [ Element.alignRight
-                        , Font.size 36
+                        [ Font.size 36
                         , Font.color (Element.rgb255 255 255 255)
                         ]
                 )
@@ -171,12 +178,10 @@ listStyles cursor =
 title =
     Mark.Default.title
         [ Element.padding 30
-        , Element.centerX
         , Font.color (Element.rgb255 240 240 240)
         , Style.fontSize.title
         , Style.fonts.title
         , Font.center
-        , Element.width Element.fill
         , Font.family [ Font.typeface "Asap Condensed" ]
         ]
         defaultText
