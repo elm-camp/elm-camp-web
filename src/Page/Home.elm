@@ -33,16 +33,18 @@ parsedMarkup =
 
 markupBody : String
 markupBody =
-    """| Title
-    elm-camp
+    """
 | SocialBadges
     | Badge
         url = https://twitter.com/elmcamp
         icon = fab fa-twitter
     | Badge
         url = https://twitter.com/elmcamp
-        icon = fab fa-twitter
+        icon = fab fa-linkedin-in
 
+| Title
+    elm-camp
+    
 Want to master the tools that make Elm live up to its promise that "if it compiles, it works"? At Elm camp, you'll get 3 days of jam packed learning, led by the authors of some of Elm's most exciting libraries.
 
 | Header

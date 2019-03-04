@@ -89,13 +89,16 @@ socialBadges : Mark.Block (model -> Element msg)
 socialBadges =
     Mark.block "SocialBadges"
         (\badges model ->
-            Element.row [ Element.spacing 12 ] badges
+            Element.row
+                [ Element.spacing 18
+                ]
+                badges
         )
         (Mark.manyOf
             [ Mark.record2 "Badge"
                 (\iconClass url ->
                     View.FontAwesome.styledIcon iconClass
-                        [ Element.centerX
+                        [ Element.alignRight
                         , Font.size 36
                         , Font.color (Element.rgb255 255 255 255)
                         ]
