@@ -39,17 +39,7 @@ document =
                 , Font.color (Element.rgb255 255 255 255)
                 ]
                 defaultText
-            , Mark.Default.title
-                [ Element.padding 30
-                , Element.centerX
-                , Font.color (Element.rgb255 240 240 240)
-                , Style.fontSize.title
-                , Style.fonts.title
-                , Font.center
-                , Element.width Element.fill
-                , Font.family [ Font.typeface "Asap Condensed" ]
-                ]
-                defaultText
+            , navbar
             , socialBadges
             , Mark.Default.list
                 { style = listStyles
@@ -83,6 +73,16 @@ document =
                 defaultText
             ]
         )
+
+
+navbar =
+    Mark.block "Navbar" (\combined -> combined) <|
+        Mark.startWith
+            (\titleElement socialBadgesElement model ->
+                Element.row [] [ titleElement model, socialBadgesElement model ]
+            )
+            title
+            socialBadges
 
 
 socialBadges : Mark.Block (model -> Element msg)
@@ -166,3 +166,17 @@ listStyles cursor =
             [ Element.spacing 8 ]
     )
         ++ [ Font.alignLeft ]
+
+
+title =
+    Mark.Default.title
+        [ Element.padding 30
+        , Element.centerX
+        , Font.color (Element.rgb255 240 240 240)
+        , Style.fontSize.title
+        , Style.fonts.title
+        , Font.center
+        , Element.width Element.fill
+        , Font.family [ Font.typeface "Asap Condensed" ]
+        ]
+        defaultText
