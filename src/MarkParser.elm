@@ -113,6 +113,9 @@ socialBadges =
                     Element.newTabLink
                         [ Font.size 36
                         , Font.color (Element.rgb255 255 255 255)
+                        , Element.mouseOver
+                            [ Font.color (Element.rgb255 253 183 3)
+                            ]
                         ]
                         { url = url
                         , label = View.FontAwesome.icon iconClass
