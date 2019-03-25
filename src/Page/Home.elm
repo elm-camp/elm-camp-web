@@ -41,6 +41,9 @@ markupBody =
             url = https://twitter.com/elmcamp
             icon = fab fa-twitter
         | Badge
+            url = https://github.com/elm-camp/elm-camp-web
+            icon = fab fa-github
+        | Badge
             url = https://www.linkedin.com/groups/13683764/
             icon = fab fa-linkedin-in
 
