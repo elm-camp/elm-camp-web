@@ -8,7 +8,7 @@ import Element.Font as Font
 import Element.Region
 import Html.Attributes
 import Mark exposing (Document)
-import Mark.Default
+import Mark.Default exposing (defaultTextStyle)
 import Style
 import View.FontAwesome
 import View.SignupForm
@@ -16,7 +16,16 @@ import View.Trainer
 
 
 defaultText =
-    Mark.Default.textWith Mark.Default.defaultTextStyle
+    Mark.Default.textWith
+        { defaultTextStyle
+            | link =
+                [ Font.color (Element.rgb255 255 255 255)
+                , Font.underline
+                , Element.mouseOver
+                    [ Font.color (Element.rgb255 253 183 3)
+                    ]
+                ]
+        }
 
 
 document : Mark.Document ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)
