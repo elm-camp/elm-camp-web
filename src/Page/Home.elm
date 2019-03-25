@@ -47,9 +47,17 @@ markupBody =
             url = https://www.linkedin.com/groups/13683764/
             icon = fab fa-linkedin-in
 
+You love Elm. It lets you change your code fearlessly! Until...
+| List
+    - You need to reload that page to see if the CSS you tweaked actually did anything (or *broke something else*).
+    - You run through your app only to find that your JSON Decoder mysterisouly stopped working.
 
+The /elm/ part of elm is great. If only changing your app's API and styling were that easy!
 
-Want to master the tools that make Elm live up to its promise that "if it compiles, it works"? At Elm camp, you'll get 3 days of jam packed learning, led by the authors of some of Elm's most exciting libraries.
+| Header
+    Master The Libraries That Make Elm /Even More Elm/
+
+elm-camp is a 3-day hands-on training retreat where you'll master the libraries that *Make Elm Even More Elm*: elm-ui and elm-graphql. You'll learn the fundamentals and best practices from the library authors themselves.
 
 | Header
     Be the First to Know!
@@ -63,7 +71,7 @@ There are limited seats! If you sign up here, you'll be the first to know when y
 <>
 
 | Header
-    The Trainers
+    The Organizers
 
 | Trainer
     name = Matt Griffith
@@ -73,5 +81,9 @@ There are limited seats! If you sign up here, you'll be the first to know when y
 | Trainer
     name = Dillon Kearns
     imageUrl = /assets/dillon.jpg
-    bio = Dillon is the author of elm-graphql, the library that lets you write type-safe server requests that "just work as soon as it compiles™".
+    bio = As the founder of Incremental Elm Consulting, Dillon's mission is to train elm teams on techniques to write elm code like experts, so they don't have to learn the hard way. Dillon introduced elm at a Fortune 10 company and trained several teams to adopt it for their front ends. The maintainability and reduced bugs inspired him to help more teams succeed with elm. In his free time he loves backpacking and playing piano
+| Trainer
+    name = Dan Abrams
+    imageUrl = /assets/dan.jpg
+    bio = Dan is an elm developer who started his career as a screenwriter. He has written for film, tv, and video games. Dan lives in northern NJ with his fianceé and their dog, and just finished a batch at Recurse Center.
 """

@@ -183,7 +183,11 @@ listStyles cursor =
         _ ->
             [ Element.spacing 8 ]
     )
-        ++ [ Font.alignLeft ]
+        ++ [ Font.alignLeft
+           , Font.family [ Font.typeface "Montserrat" ]
+           , Font.color (Element.rgb255 255 255 255)
+           , Font.size 16
+           ]
 
 
 title =
