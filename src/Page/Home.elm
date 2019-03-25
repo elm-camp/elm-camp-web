@@ -49,7 +49,7 @@ markupBody =
 
 You love Elm. It lets you change your code fearlessly! Until...
 | List
-    - You need to reload that page to see if the CSS you tweaked actually did anything (or *broke something else*).
+    - You need to reload the page to see whether the CSS you tweaked actually did anything (or *broke something else*).
     - You run through your app only to find that your JSON Decoder mysterisouly stopped working.
 
 The /elm/ part of elm is great. If only changing your app's API and styling were that easy!
@@ -58,6 +58,26 @@ The /elm/ part of elm is great. If only changing your app's API and styling were
     Master The Libraries That Make Elm /Even More Elm/
 
 elm-camp is a 3-day hands-on training retreat where you'll master the libraries that *Make Elm Even More Elm*: elm-ui and elm-graphql. You'll learn the fundamentals and best practices from the library authors themselves.
+
+| Header
+    Welcome to elm-camp!
+
+| Header
+    Day 1
+
+elm-ui Masterclass by Matthew Griffith
+
+{Link|>> Learn more about elm-ui.| url = https://www.youtube.com/watch?v=Ie-gqwSHQr0 }
+
+| Header
+    Day 2
+
+elm-graphql Masterclass by Dillon Kearns
+
+{Link|>> Learn more about elm-graphql. | url = https://www.youtube.com/watch?v=memIRXFSNkU }
+
+| Header
+    Day 3
 
 | Header
     Be the First to Know!
