@@ -47,12 +47,13 @@ markupBody =
             url = https://www.linkedin.com/groups/13683764/
             icon = fab fa-linkedin-in
 
-You love Elm. It lets you change your code fearlessly! Until...
+You love Elm. It lets you change your code fearlessly! But...
 | List
-    - You need to reload the page to see whether the CSS you tweaked actually did anything (or *broke something else*).
-    - You run through your app only to find that your JSON Decoder mysterisouly stopped working.
+    - Did that CSS you added actually do anything?
+    - Did it /break something totally unrelated/?
+    - Did your API change break a JSON Decoder?
 
-The /elm/ part of elm is great. If only changing your app's API and styling were that easy!
+Imagine if changing your API requests and styling was as bulletproof and easy as changing the rest of your Elm app!
 
 | Header
     Master The Libraries That Make Elm /Even More Elm/
