@@ -76,6 +76,8 @@ elm-graphql Masterclass by Dillon Kearns
 | Subheader
     Day 3
 
+Apply everything you've learned to build an app with elm-ui and elm-graphql. We'll supply you with a GraphQL API, some inspiration, and expert guidance from all of our trainers.
+
 | Header
     Be the First to Know!
 
