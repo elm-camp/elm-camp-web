@@ -2,7 +2,6 @@ module Page.Home exposing (parsedMarkup, view)
 
 import Dimensions exposing (Dimensions)
 import Element exposing (Element)
-import Element.Background as Background
 import Element.Border
 import Element.Font
 import Html

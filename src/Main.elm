@@ -132,7 +132,7 @@ mainView ({ page } as model) =
                         { angle = 45
                         , steps =
                             [ Element.rgb255 5 46 123
-                            , Element.rgb255 65 135 204
+                            , Element.rgb255 45 115 184
                             ]
                         }
                     , Element.width Element.fill
