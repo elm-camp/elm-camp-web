@@ -57,7 +57,7 @@ The /elm/ part of elm is great. If only changing your app's API and styling were
 | Header
     Master The Libraries That Make Elm /Even More Elm/
 
-elm-camp is a 3-day hands-on training retreat where you'll master the libraries that *Make Elm Even More Elm*: elm-ui and elm-graphql. You'll learn the fundamentals and best practices from the library authors themselves.
+elm-camp is a 3-day hands-on training retreat where you'll master the libraries that *Make Elm Even More Elm*. You'll learn the fundamentals and best practices from the library authors themselves.
 
 | Header
     Welcome to elm-camp!
