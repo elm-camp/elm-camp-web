@@ -47,6 +47,7 @@ document =
                 , Font.color (Element.rgb255 255 255 255)
                 ]
                 defaultText
+            , title
             , socialBadges
             , Mark.Default.list
                 { style = listStyles

@@ -33,7 +33,7 @@ parsedMarkup =
 
 markupBody : String
 markupBody =
-    """| Header
+    """| Title
     elm-camp
 
 You love Elm. It lets you change your code fearlessly! But...
