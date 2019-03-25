@@ -187,6 +187,7 @@ listStyles cursor =
            , Font.family [ Font.typeface "Montserrat" ]
            , Font.color (Element.rgb255 255 255 255)
            , Font.size 16
+           , Element.width Element.fill
            ]
 
 
