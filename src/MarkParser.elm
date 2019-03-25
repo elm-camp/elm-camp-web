@@ -33,8 +33,7 @@ document =
     Mark.document
         (\children model ->
             Element.textColumn
-                [ Element.width Element.fill
-                , Element.centerX
+                [ Element.centerX
                 , Element.spacing 30
                 , Element.padding 35
                 ]
@@ -48,7 +47,6 @@ document =
                 , Font.color (Element.rgb255 255 255 255)
                 ]
                 defaultText
-            , navbar
             , socialBadges
             , Mark.Default.list
                 { style = listStyles
@@ -84,37 +82,18 @@ document =
         )
 
 
-navbar =
-    Mark.block "Navbar" (\combined -> combined) <|
-        Mark.startWith
-            (\titleElement socialBadgesElement model ->
-                if Dimensions.isMobile model.dimensions then
-                    Element.column []
-                        [ titleElement model, socialBadgesElement model |> Element.el [ Element.centerX ] ]
-
-                else
-                    Element.row [ Element.width Element.fill ]
-                        [ titleElement model
-                            |> Element.el
-                                [ Element.width Element.fill
-                                , socialBadgesElement model
-                                    |> Element.el [ Element.alignRight ]
-                                    |> Element.inFront
-                                ]
-                        ]
-            )
-            title
-            socialBadges
-
-
 socialBadges : Mark.Block (model -> Element msg)
 socialBadges =
     Mark.block "SocialBadges"
         (\badges model ->
             Element.row
-                [ Element.spacing 18
+                []
+                [ Element.row
+                    [ Element.centerX
+                    , Element.spacing 18
+                    ]
+                    badges
                 ]
-                badges
         )
         (Mark.manyOf
             [ Mark.record2 "Badge"
@@ -196,7 +175,8 @@ listStyles cursor =
            , Font.family [ Font.typeface "Montserrat" ]
            , Font.color (Element.rgb255 255 255 255)
            , Font.size 16
-           , Element.width Element.fill
+
+           -- , Element.width Element.fill
            ]
 
 

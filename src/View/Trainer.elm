@@ -12,8 +12,7 @@ view isMobile details =
 
      else
         Element.row
-            [ Element.alignLeft
-            ]
+            []
     )
         [ avatar details
         , bio details

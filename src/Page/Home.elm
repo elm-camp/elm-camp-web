@@ -19,7 +19,8 @@ view model =
         |> (\result ->
                 case result of
                     Err message ->
-                        Element.text "Failed to parse."
+                        -- Element.text "Failed to parse."
+                        message |> Debug.toString |> Element.text |> List.singleton |> Element.paragraph []
 
                     Ok element ->
                         element model
@@ -33,19 +34,8 @@ parsedMarkup =
 
 markupBody : String
 markupBody =
-    """| Navbar
-    | Title
-        elm-camp
-    | SocialBadges
-        | Badge
-            url = https://twitter.com/elmcamp
-            icon = fab fa-twitter
-        | Badge
-            url = https://github.com/elm-camp/elm-camp-web
-            icon = fab fa-github
-        | Badge
-            url = https://www.linkedin.com/groups/13683764/
-            icon = fab fa-linkedin-in
+    """| Header
+    elm-camp
 
 You love Elm. It lets you change your code fearlessly! But...
 | List
@@ -114,4 +104,15 @@ There are limited seats! If you sign up here, you'll be the first to know when y
     name = Dan Abrams
     imageUrl = /assets/dan.jpg
     bio = Dan is an elm developer who started his career as a screenwriter. He has written for film, tv, and video games. Dan lives in northern NJ with his fianceé and their dog, and just finished a batch at Recurse Center.
+
+| SocialBadges
+    | Badge
+        url = https://twitter.com/elmcamp
+        icon = fab fa-twitter
+    | Badge
+        url = https://github.com/elm-camp/elm-camp-web
+        icon = fab fa-github
+    | Badge
+        url = https://www.linkedin.com/groups/13683764/
+        icon = fab fa-linkedin-in
 """
