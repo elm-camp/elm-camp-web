@@ -59,21 +59,21 @@ elm-camp is a 3-day hands-on training retreat where you'll master elm-ui and elm
 | Header
     Schedule
 
-| Header
+| Subheader
     Day 1
 
 elm-ui Masterclass by Matthew Griffith
 
 {Link|>> Learn more about elm-ui.| url = https://www.youtube.com/watch?v=Ie-gqwSHQr0 }
 
-| Header
+| Subheader
     Day 2
 
 elm-graphql Masterclass by Dillon Kearns
 
 {Link|>> Learn more about elm-graphql. | url = https://www.youtube.com/watch?v=memIRXFSNkU }
 
-| Header
+| Subheader
     Day 3
 
 | Header

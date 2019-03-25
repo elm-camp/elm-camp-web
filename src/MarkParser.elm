@@ -47,6 +47,13 @@ document =
                 , Font.color (Element.rgb255 255 255 255)
                 ]
                 defaultText
+            , subheader
+                [ Font.size 24
+                , Font.alignLeft
+                , Font.family [ Font.typeface "Asap Condensed" ]
+                , Font.color (Element.rgb255 255 255 255)
+                ]
+                defaultText
             , title
             , socialBadges
             , Mark.Default.list
@@ -81,6 +88,17 @@ document =
                 defaultText
             ]
         )
+
+
+subheader : List (Element.Attribute msg) -> Mark.Block (model -> List (Element msg)) -> Mark.Block (model -> Element msg)
+subheader attrs textParser =
+    Mark.block "Subheader"
+        (\elements model ->
+            Element.paragraph
+                (Element.Region.heading 3 :: attrs)
+                (elements model)
+        )
+        textParser
 
 
 socialBadges : Mark.Block (model -> Element msg)
