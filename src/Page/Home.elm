@@ -56,12 +56,19 @@ You love Elm. It lets you change your code fearlessly! But...
 Imagine if changing your API requests and styling was as bulletproof and easy as changing the rest of your Elm app!
 
 | Header
-    Master The Libraries That Make Elm /Even More Elm/
+    Who Is elm-camp For?
 
-elm-camp is a 3-day hands-on training retreat where you'll master the libraries that *Make Elm Even More Elm*. You'll learn the fundamentals and best practices from the library authors themselves.
+elm-camp is a great fit for you if you are:
+| List
+    - Comfortable with Elm basics, but looking to level up.
 
 | Header
-    Welcome to elm-camp!
+    Master The Libraries That Make Elm /Even More Elm/
+
+elm-camp is a 3-day hands-on training retreat where you'll master elm-ui and elm-graphql. You'll come away with a full grasp of both libraries' fundamentals and best practices, as taught by the library authors themselves.
+
+| Header
+    Schedule
 
 | Header
     Day 1
