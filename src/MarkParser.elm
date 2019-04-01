@@ -178,7 +178,7 @@ trainer =
 
 trainers : Mark.Block (model -> Element msg)
 trainers =
-    Mark.block "Trainers" (\children model -> Element.column [] children) (Mark.manyOf [ trainer ])
+    Mark.block "Trainers" (\children model -> Element.row [] children) (Mark.manyOf [ trainer ])
 
 
 signup : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)
