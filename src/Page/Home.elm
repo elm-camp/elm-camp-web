@@ -57,16 +57,16 @@ We're limiting this event to 25 people so you get the most one-on-one time possi
 | Trainer
     name = Matt Griffith
     imageUrl = /assets/matt.jpg
-    bio = Matt is the author of the popular Elm UI library. Elm UI is known for making it as delightful to create your views as it is to write any other Elm code. More impressively, it even makes refactoring and changing your views delightful and reliable!
+    bio = Author of elm-ui, elm-markup, elm-style-animation, and Why Elm.
 
 | Trainer
     name = Dillon Kearns
     imageUrl = /assets/dillon.jpg
-    bio = As the founder of Incremental Elm Consulting, Dillon's mission is to train elm teams on techniques to write elm code like experts, so they don't have to learn the hard way. Dillon introduced elm at a Fortune 10 company and trained several teams to adopt it for their front ends. The maintainability and reduced bugs inspired him to help more teams succeed with elm. In his free time he loves backpacking and playing piano
+    bio = Author of elm-graphql. He’s the founder of Incremental Elm where he helps teams learn elm practices without finding them the hard way.
 | Trainer
     name = Dan Abrams
     imageUrl = /assets/dan.jpg
-    bio = Dan is an elm developer who started his career as a screenwriter. He has written for film, tv, and video games. Dan lives in northern NJ with his fianceé and their dog, and just finished a batch at Recurse Center.
+    bio = Co-organizer of elm Europe. Author of elm-media.
 
 
 <>
