@@ -40,7 +40,7 @@ Interested in spending 3 days with the creators of Elm GraphQL and Elm UI?
 The Masterclass workshops will cover:
 
 | List
-    - Type-safety and flexibility across APIs with Elm GraphQL
+    - End-to-end type-safety from client to server with Elm GraphQL
     - Unrivaled styling experience with Elm UI
     - Incremental techniques for adopting these libraries for your codebase
     - Best practices you can’t learn from just browsing the docs
