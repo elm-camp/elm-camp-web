@@ -45,9 +45,9 @@ document =
         (\children model ->
             Element.textColumn
                 [ Element.spacing 30
-                , Element.padding 35
+                , Element.padding 45
                 , Element.centerX
-                , Element.width (Element.fill |> Element.maximum 1200)
+                , Element.width Element.fill
                 ]
                 (List.map (\view -> view model) children)
         )
@@ -153,7 +153,7 @@ signupBox : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String 
 signupBox =
     Mark.block "SignupBox"
         (\children model ->
-            Element.textColumn
+            Element.column
                 [ Element.centerX
                 , Element.spacing 30
                 , Element.padding 35

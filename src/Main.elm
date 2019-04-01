@@ -96,8 +96,7 @@ mainView ({ page } as model) =
         Nothing ->
             Element.text "Page not found!"
     )
-        |> Element.layout
-            []
+        |> Element.layout []
 
 
 init : () -> Url.Url -> Browser.Navigation.Key -> ( Model, Cmd Msg )
