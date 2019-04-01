@@ -5,15 +5,9 @@ import Style
 
 
 view isMobile details =
-    (if isMobile then
-        Element.column
-            [ Element.centerX
-            ]
-
-     else
-        Element.row
-            []
-    )
+    Element.row
+        [ Element.centerX
+        ]
         [ avatar details
         , bio details
         ]
@@ -34,7 +28,7 @@ bio details =
 
 
 avatar details =
-    Element.image [ Element.width (Element.fill |> Element.maximum 250), Element.centerX ]
+    Element.image [ Element.width (Element.fill |> Element.maximum 120), Element.centerX ]
         { src = details.imageUrl
         , description = details.name
         }
