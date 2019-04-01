@@ -37,7 +37,7 @@ markupBody =
 
 Interested in spending 3 days with the creators of Elm GraphQL and Elm UI?
 
-It'll be a masterclass workshop covering
+The Masterclass workshops will cover:
 
 | List
     - Type-safety and flexibility across APIs with Elm GraphQL
