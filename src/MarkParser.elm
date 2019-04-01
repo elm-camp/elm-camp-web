@@ -67,11 +67,7 @@ document =
                 ]
                 defaultText
             , title
-            , Mark.Default.list
-                { style = listStyles
-                , icon = Mark.Default.listIcon
-                }
-                defaultText
+            , list
             , image
             , signup
             , Mark.Default.monospace
@@ -199,4 +195,13 @@ title =
         , Font.center
         , Font.family [ Font.typeface "Asap Condensed" ]
         ]
+        defaultText
+
+
+list : Mark.Block (model -> Element msg)
+list =
+    Mark.Default.list
+        { style = listStyles
+        , icon = Mark.Default.listIcon
+        }
         defaultText
