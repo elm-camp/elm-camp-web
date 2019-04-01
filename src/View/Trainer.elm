@@ -4,9 +4,10 @@ import Element
 import Style
 
 
-view isMobile details =
-    Element.row
+view details =
+    Element.column
         [ Element.centerX
+        , Element.width Element.fill
         ]
         [ avatar details
         , bio details
@@ -16,9 +17,7 @@ view isMobile details =
 bio details =
     Element.column
         [ Element.padding 20
-        , Element.height Element.fill
         , Element.spacing 15
-        , Element.width Element.fill
         ]
         [ [ Element.text details.name ] |> Element.paragraph Style.headerAttrs
 

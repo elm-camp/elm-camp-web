@@ -57,6 +57,7 @@ document =
                 , Font.color primaryColor
                 ]
                 defaultText
+            , trainers
             , subheader
                 [ Font.size 24
                 , Font.alignLeft
@@ -72,7 +73,6 @@ document =
                 }
                 defaultText
             , image
-            , trainer
             , signup
             , Mark.Default.monospace
                 [ Element.spacing 5
@@ -161,19 +161,24 @@ image =
         (Mark.field "description" Mark.string)
 
 
-trainer : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)
+trainer : Mark.Block (Element msg)
 trainer =
     Mark.record3 "Trainer"
-        (\name imageUrl bio model ->
-            View.Trainer.view (Dimensions.isMobile model.dimensions)
+        (\name imageUrl bio ->
+            View.Trainer.view
                 { name = name
                 , imageUrl = imageUrl
-                , bio = bio model
+                , bio = bio ()
                 }
         )
         (Mark.string |> Mark.field "name")
         (Mark.string |> Mark.field "imageUrl")
         (Mark.field "bio" defaultText)
+
+
+trainers : Mark.Block (model -> Element msg)
+trainers =
+    Mark.block "Trainers" (\children model -> Element.column [] children) (Mark.manyOf [ trainer ])
 
 
 signup : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)

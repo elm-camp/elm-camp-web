@@ -54,19 +54,20 @@ We're limiting this event to 25 people so you get the most one-on-one time possi
 | Header
     The Organizers
 
-| Trainer
-    name = Matt Griffith
-    imageUrl = /assets/matt.jpg
-    bio = Author of elm-ui, elm-markup, elm-style-animation, and Why Elm.
+| Trainers
+    | Trainer
+        name = Matt Griffith
+        imageUrl = /assets/matt.jpg
+        bio = Author of elm-ui, elm-markup, elm-style-animation, and Why Elm.
 
-| Trainer
-    name = Dillon Kearns
-    imageUrl = /assets/dillon.jpg
-    bio = Author of elm-graphql. He’s the founder of Incremental Elm where he helps teams learn elm practices without finding them the hard way.
-| Trainer
-    name = Dan Abrams
-    imageUrl = /assets/dan.jpg
-    bio = Co-organizer of elm Europe. Author of elm-media.
+    | Trainer
+        name = Dillon Kearns
+        imageUrl = /assets/dillon.jpg
+        bio = Author of elm-graphql. He’s the founder of Incremental Elm where he helps teams learn elm practices without finding them the hard way.
+    | Trainer
+        name = Dan Abrams
+        imageUrl = /assets/dan.jpg
+        bio = Co-organizer of elm Europe. Author of elm-media.
 
 
 <>
