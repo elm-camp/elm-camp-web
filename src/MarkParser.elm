@@ -25,6 +25,7 @@ highlightColor =
     Element.rgb255 253 183 3
 
 
+defaultText : Mark.Block (model -> List (Element msg))
 defaultText =
     Mark.Default.textWith
         { defaultTextStyle
@@ -66,7 +67,6 @@ document =
                 ]
                 defaultText
             , title
-            , socialBadges
             , Mark.Default.list
                 { style = listStyles
                 , icon = Mark.Default.listIcon
@@ -109,39 +109,6 @@ subheader attrs textParser =
                 (elements model)
         )
         textParser
-
-
-socialBadges : Mark.Block (model -> Element msg)
-socialBadges =
-    Mark.block "SocialBadges"
-        (\badges model ->
-            Element.row
-                []
-                [ Element.row
-                    [ Element.centerX
-                    , Element.spacing 18
-                    ]
-                    badges
-                ]
-        )
-        (Mark.manyOf
-            [ Mark.record2 "Badge"
-                (\iconClass url ->
-                    Element.newTabLink
-                        [ Font.size 36
-                        , Font.color primaryColor
-                        , Element.mouseOver
-                            [ Font.color highlightColor
-                            ]
-                        ]
-                        { url = url
-                        , label = View.FontAwesome.icon iconClass
-                        }
-                )
-                (Mark.field "icon" Mark.string)
-                (Mark.field "url" Mark.string)
-            ]
-        )
 
 
 image : Mark.Block (model -> Element msg)
@@ -222,6 +189,7 @@ listStyles cursor =
            ]
 
 
+title : Mark.Block (model -> Element msg)
 title =
     Mark.Default.title
         [ Element.padding 30

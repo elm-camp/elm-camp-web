@@ -5,6 +5,9 @@ import Element.Font
 import Style
 
 
+view :
+    { a | bio : List (Element.Element msg), imageUrl : String, name : String }
+    -> Element.Element msg
 view details =
     Element.column
         [ Element.centerX
@@ -18,6 +21,7 @@ view details =
         ]
 
 
+bio : { a | bio : List (Element.Element msg), name : String } -> Element.Element msg
 bio details =
     Element.column
         [ Element.padding 20
@@ -31,6 +35,7 @@ bio details =
         ]
 
 
+avatar : { a | imageUrl : String, name : String } -> Element.Element msg
 avatar details =
     Element.image [ Element.width (Element.fill |> Element.maximum 120), Element.centerX ]
         { src = details.imageUrl
