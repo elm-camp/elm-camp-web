@@ -96,6 +96,10 @@ mainView ({ page } as model) =
         Nothing ->
             Element.text "Page not found!"
     )
+        |> Element.el
+            [ Element.width (Element.fill |> Element.maximum 1000)
+            , Element.centerX
+            ]
         |> Element.layout []
 
 
