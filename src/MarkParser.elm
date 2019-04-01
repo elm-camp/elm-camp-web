@@ -164,7 +164,7 @@ signupBox =
                     , blur = 1
                     , color = Element.rgba255 0 0 0 0.35
                     }
-                , Background.color (Element.rgba255 170 210 250 0.2)
+                , Background.color (Element.rgba255 190 230 250 0.2)
                 ]
                 (List.map (\child -> child model) children
                     ++ [ View.SignupForm.view model.refId |> Element.html |> Element.el [ Element.centerX ] ]
