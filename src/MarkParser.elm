@@ -176,9 +176,17 @@ trainer =
         (Mark.field "bio" defaultText)
 
 
-trainers : Mark.Block (model -> Element msg)
+trainers : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)
 trainers =
-    Mark.block "Trainers" (\children model -> Element.row [] children) (Mark.manyOf [ trainer ])
+    Mark.block "Trainers"
+        (\children model ->
+            if Dimensions.isMobile model.dimensions then
+                Element.column [] children
+
+            else
+                Element.row [] children
+        )
+        (Mark.manyOf [ trainer ])
 
 
 signup : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)
