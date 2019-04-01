@@ -69,17 +69,13 @@ We're limiting this event to 25 people so you get the most one-on-one time possi
         imageUrl = /assets/dan.jpg
         bio = Co-organizer of elm Europe. Author of elm-media.
 
-
-Sign up here to stay informed as we announce:
-| List
-    - Official date and location
-    - Early bird ticket sale
-
-We’ll also notify you of our live coding streams that will give you a preview of some of the techniques you’ll learn at elm-camp:
-| List
-    - Underused best practices for elm-ui and elm-graphql
-    - Common problems and solutions in elm-ui and elm-graphql
-
-
 | Signup
-"""
+    Sign up here to stay informed as we announce:
+    | List
+        - Official date and location
+        - Early bird ticket sale
+
+    We’ll also notify you of our live coding streams that will give you a preview of some of the techniques you’ll learn at elm-camp:
+    | List
+        - Underused best practices for elm-ui and elm-graphql
+        - Common problems and solutions in elm-ui and elm-graphql"""

@@ -82,16 +82,7 @@ document =
                 ]
 
             -- Toplevel Text
-            , Mark.map
-                (\viewEls model ->
-                    Element.paragraph
-                        [ Font.family [ Font.typeface "Montserrat" ]
-                        , Font.color primaryColor
-                        , Font.size 16
-                        ]
-                        (viewEls model)
-                )
-                defaultText
+            , topLevelText
             ]
         )
 
@@ -154,9 +145,17 @@ trainers =
 
 signup : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)
 signup =
-    Mark.stub "Signup"
-        (\model ->
-            View.SignupForm.view model.refId |> Element.html
+    Mark.block "Signup"
+        (\children model ->
+            Element.column []
+                (List.map (\child -> child model) children
+                    ++ [ View.SignupForm.view model.refId |> Element.html ]
+                )
+        )
+        (Mark.manyOf
+            [ list
+            , topLevelText
+            ]
         )
 
 
@@ -204,4 +203,17 @@ list =
         { style = listStyles
         , icon = Mark.Default.listIcon
         }
+        defaultText
+
+
+topLevelText =
+    Mark.map
+        (\viewEls model ->
+            Element.paragraph
+                [ Font.family [ Font.typeface "Montserrat" ]
+                , Font.color primaryColor
+                , Font.size 16
+                ]
+                (viewEls model)
+        )
         defaultText
