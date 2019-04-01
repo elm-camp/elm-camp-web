@@ -18,8 +18,7 @@ view model =
         |> (\result ->
                 case result of
                     Err message ->
-                        -- Element.text "Failed to parse."
-                        message |> Debug.toString |> Element.text |> List.singleton |> Element.paragraph []
+                        Element.text "Failed to parse."
 
                     Ok element ->
                         element model
