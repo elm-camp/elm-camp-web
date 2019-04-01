@@ -44,10 +44,9 @@ document =
     Mark.document
         (\children model ->
             Element.textColumn
-                [ Element.centerX
-                , Element.spacing 30
+                [ Element.spacing 30
                 , Element.padding 35
-                , Element.width Element.fill
+                , Element.centerX
                 ]
                 (List.map (\view -> view model) children)
         )

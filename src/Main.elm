@@ -91,28 +91,13 @@ mainView : Model -> Html Msg
 mainView ({ page } as model) =
     (case page of
         Just (Route.Home { refId }) ->
-            Element.column
-                [ Element.height Element.fill
-                , Element.alignTop
-                ]
-                [ (if model.dimensions |> Dimensions.isMobile then
-                    Element.column
-
-                   else
-                    Element.row
-                  )
-                    []
-                    [ Element.Lazy.lazy Page.Home.view { dimensions = model.dimensions, refId = refId }
-                    ]
-                ]
+            Page.Home.view { dimensions = model.dimensions, refId = refId }
 
         Nothing ->
             Element.text "Page not found!"
     )
         |> Element.layout
-            [ Element.centerX
-            , Element.width (Element.shrink |> Element.maximum 1000)
-            ]
+            []
 
 
 init : () -> Url.Url -> Browser.Navigation.Key -> ( Model, Cmd Msg )
