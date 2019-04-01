@@ -17,9 +17,8 @@ view maybeReferenceId =
             , novalidate True
             ]
             [ div [ id "mc_embed_signup_scroll", Attr.style "display" "flex" ]
-                [ fieldGroup { name = "EMAIL", display = "Email Address" }
-                , fieldGroup { name = "FNAME", display = "First Name" }
-                , fieldGroup { name = "LNAME", display = "Last Name" }
+                [ fieldGroup { name = "FNAME", display = "First Name" }
+                , fieldGroup { name = "EMAIL", display = "Email" }
                 , fieldGroup_ { hidden = True, defaultValue = maybeReferenceId, display = "Reference ID", name = "REFERENCE" }
                 ]
             , closingContents
