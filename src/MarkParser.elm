@@ -167,7 +167,7 @@ signupBox =
                 , Background.color (Element.rgba255 170 210 250 0.2)
                 ]
                 (List.map (\child -> child model) children
-                    ++ [ View.SignupForm.view model.refId |> Element.html ]
+                    ++ [ View.SignupForm.view model.refId |> Element.html |> Element.el [ Element.centerX ] ]
                 )
         )
         (Mark.manyOf
