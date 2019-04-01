@@ -10,6 +10,8 @@ view details =
         [ Element.centerX
         , Element.alignTop
         , Element.width Element.fill
+
+        -- , Element.explain Debug.todo
         ]
         [ avatar details
         , bio details
@@ -20,6 +22,7 @@ bio details =
     Element.column
         [ Element.padding 20
         , Element.spacing 15
+        , Element.width Element.fill
         ]
         [ [ Element.text details.name ] |> Element.paragraph (Element.Font.center :: Style.headerAttrs)
 
