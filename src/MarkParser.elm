@@ -147,7 +147,11 @@ signup : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String } -
 signup =
     Mark.block "Signup"
         (\children model ->
-            Element.column []
+            Element.textColumn
+                [ Element.centerX
+                , Element.spacing 30
+                , Element.padding 35
+                ]
                 (List.map (\child -> child model) children
                     ++ [ View.SignupForm.view model.refId |> Element.html ]
                 )
