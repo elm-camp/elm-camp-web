@@ -94,8 +94,6 @@ mainView ({ page } as model) =
             Element.column
                 [ Element.height Element.fill
                 , Element.alignTop
-                , Element.centerX
-                , Element.width (Element.shrink |> Element.maximum 1000)
                 ]
                 [ (if model.dimensions |> Dimensions.isMobile then
                     Element.column
@@ -112,7 +110,9 @@ mainView ({ page } as model) =
             Element.text "Page not found!"
     )
         |> Element.layout
-            []
+            [ Element.centerX
+            , Element.width (Element.shrink |> Element.maximum 1000)
+            ]
 
 
 init : () -> Url.Url -> Browser.Navigation.Key -> ( Model, Cmd Msg )

@@ -46,7 +46,7 @@ The Masterclass workshops will cover:
     - Best practices you can’t learn from just browsing the docs
 
 
-We want to give you so many practical, implementable techniques that you're a :rocketship: with your typesafe app.  This'll cover the best practices we've encountered.
+We want to give you so many practical, implementable techniques that you're a 🚀 with your typesafe app.  This'll cover the best practices we've encountered.
 
 We're limiting this event to 25 people so you get the most one-on-one time possible and connect with everyone there.  It'll be like going to summer camp!
 

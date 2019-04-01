@@ -47,6 +47,7 @@ document =
                 [ Element.centerX
                 , Element.spacing 30
                 , Element.padding 35
+                , Element.width Element.fill
                 ]
                 (List.map (\view -> view model) children)
         )
@@ -156,6 +157,7 @@ signupBox =
                 [ Element.centerX
                 , Element.spacing 30
                 , Element.padding 35
+                , Element.width Element.fill
                 , Border.shadow
                     { offset = ( 0, 0 )
                     , size = 1
