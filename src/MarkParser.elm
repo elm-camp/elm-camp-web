@@ -47,6 +47,7 @@ document =
                 [ Element.spacing 30
                 , Element.padding 35
                 , Element.centerX
+                , Element.width (Element.fill |> Element.maximum 1200)
                 ]
                 (List.map (\view -> view model) children)
         )
