@@ -151,6 +151,12 @@ signupBox =
                 [ Element.centerX
                 , Element.spacing 30
                 , Element.padding 35
+                , Border.shadow
+                    { offset = ( 0, 0 )
+                    , size = 1
+                    , blur = 1
+                    , color = Element.rgba255 0 0 0 0.35
+                    }
                 ]
                 (List.map (\child -> child model) children
                     ++ [ View.SignupForm.view model.refId |> Element.html ]
