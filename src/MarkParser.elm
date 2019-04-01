@@ -15,14 +15,24 @@ import View.SignupForm
 import View.Trainer
 
 
+primaryColor : Element.Color
+primaryColor =
+    Element.rgb255 0 0 0
+
+
+highlightColor : Element.Color
+highlightColor =
+    Element.rgb255 253 183 3
+
+
 defaultText =
     Mark.Default.textWith
         { defaultTextStyle
             | link =
-                [ Font.color (Element.rgb255 255 255 255)
+                [ Font.color primaryColor
                 , Font.underline
                 , Element.mouseOver
-                    [ Font.color (Element.rgb255 253 183 3)
+                    [ Font.color highlightColor
                     ]
                 ]
         }
@@ -44,14 +54,14 @@ document =
                 [ Font.size 36
                 , Font.family [ Font.typeface "Asap Condensed" ]
                 , Font.center
-                , Font.color (Element.rgb255 255 255 255)
+                , Font.color primaryColor
                 ]
                 defaultText
             , subheader
                 [ Font.size 24
                 , Font.alignLeft
                 , Font.family [ Font.typeface "Asap Condensed" ]
-                , Font.color (Element.rgb255 255 255 255)
+                , Font.color primaryColor
                 ]
                 defaultText
             , title
@@ -80,7 +90,7 @@ document =
                 (\viewEls model ->
                     Element.paragraph
                         [ Font.family [ Font.typeface "Montserrat" ]
-                        , Font.color (Element.rgb255 255 255 255)
+                        , Font.color primaryColor
                         , Font.size 16
                         ]
                         (viewEls model)
@@ -119,9 +129,9 @@ socialBadges =
                 (\iconClass url ->
                     Element.newTabLink
                         [ Font.size 36
-                        , Font.color (Element.rgb255 255 255 255)
+                        , Font.color primaryColor
                         , Element.mouseOver
-                            [ Font.color (Element.rgb255 253 183 3)
+                            [ Font.color highlightColor
                             ]
                         ]
                         { url = url
@@ -192,7 +202,7 @@ listStyles cursor =
     )
         ++ [ Font.alignLeft
            , Font.family [ Font.typeface "Montserrat" ]
-           , Font.color (Element.rgb255 255 255 255)
+           , Font.color primaryColor
            , Font.size 16
 
            -- , Element.width Element.fill
@@ -202,7 +212,7 @@ listStyles cursor =
 title =
     Mark.Default.title
         [ Element.padding 30
-        , Font.color (Element.rgb255 240 240 240)
+        , Font.color primaryColor
         , Style.fontSize.title
         , Style.fonts.title
         , Font.center

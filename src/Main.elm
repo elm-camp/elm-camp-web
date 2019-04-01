@@ -14,7 +14,7 @@ import Element.Lazy
 import Html exposing (Html)
 import Page.Home
 import Route exposing (Route)
-import Style exposing (fonts, palette)
+import Style
 import Svg exposing (..)
 import Svg.Attributes exposing (..)
 import Task
@@ -22,8 +22,6 @@ import Time
 import Url exposing (Url)
 import Url.Builder
 import Url.Parser exposing (Parser)
-import View.Campfire
-import View.Stars
 
 
 port pageChanged : () -> Cmd msg
@@ -33,8 +31,6 @@ type alias Model =
     { dimensions : Dimensions
     , page : Maybe Route
     , key : Browser.Navigation.Key
-    , fireAnimation : View.Campfire.Model
-    , stars : View.Stars.Model
     }
 
 
@@ -43,8 +39,6 @@ type Msg
     | WindowResized Int Int
     | UrlChanged Url
     | UrlRequest Browser.UrlRequest
-    | CampfireMsg View.Campfire.Msg
-    | StarsMsg View.Stars.Msg
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -83,12 +77,6 @@ update action model =
                 Browser.External href ->
                     ( model, Browser.Navigation.load href )
 
-        CampfireMsg campfireMsg ->
-            ( { model | fireAnimation = View.Campfire.update campfireMsg model.fireAnimation }, Cmd.none )
-
-        StarsMsg starsMsg ->
-            ( { model | stars = View.Stars.update starsMsg model.stars }, Cmd.none )
-
 
 view : Model -> Browser.Document Msg
 view ({ page } as model) =
@@ -107,7 +95,7 @@ mainView ({ page } as model) =
                 [ Element.height Element.fill
                 , Element.alignTop
                 , Element.centerX
-                , Element.width (Element.fill |> Element.maximum 1000)
+                , Element.width (Element.shrink |> Element.maximum 1000)
                 ]
                 [ (if model.dimensions |> Dimensions.isMobile then
                     Element.column
@@ -115,29 +103,10 @@ mainView ({ page } as model) =
                    else
                     Element.row
                   )
-                    [ View.Stars.view model.stars |> Element.behindContent
-                    ]
-                    [ View.Campfire.view model.fireAnimation
-                        |> Element.el
-                            [ Element.width (Element.maximum 200 Element.fill)
-                            , Element.alignTop
-                            , Element.paddingEach { top = 120, right = 0, bottom = 0, left = 0 }
-                            , Element.centerX
-                            ]
-                    , Element.Lazy.lazy Page.Home.view { dimensions = model.dimensions, refId = refId }
+                    []
+                    [ Element.Lazy.lazy Page.Home.view { dimensions = model.dimensions, refId = refId }
                     ]
                 ]
-                |> Element.el
-                    [ Background.gradient
-                        { angle = 45
-                        , steps =
-                            [ Element.rgb255 5 46 123
-                            , Element.rgb255 45 115 184
-                            ]
-                        }
-                    , Element.width Element.fill
-                    , Element.height Element.fill
-                    ]
 
         Nothing ->
             Element.text "Page not found!"
@@ -155,9 +124,6 @@ init _ url navigationKey =
                 }
       , page = Route.parse url
       , key = navigationKey
-      , fireAnimation = View.Campfire.init
-      , stars =
-            View.Stars.init
       }
     , Browser.Dom.getViewport
         |> Task.perform InitialViewport
@@ -168,8 +134,6 @@ subscriptions : Model -> Sub Msg
 subscriptions model =
     Sub.batch
         [ Browser.Events.onResize WindowResized
-        , View.Campfire.subscriptions model.fireAnimation |> Sub.map CampfireMsg
-        , View.Stars.subscriptions model.stars |> Sub.map StarsMsg
         ]
 
 

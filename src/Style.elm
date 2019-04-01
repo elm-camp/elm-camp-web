@@ -8,7 +8,7 @@ import Element.Font
 
 bodyAttrs =
     [ Element.Font.family [ Element.Font.typeface "Montserrat" ]
-    , Element.Font.color (Element.rgb255 255 255 255)
+    , Element.Font.color (Element.rgba255 0 0 0 0.85)
     , Element.Font.size 16
     ]
 
@@ -16,7 +16,7 @@ bodyAttrs =
 headerAttrs =
     [ Element.Font.size 24
     , Element.Font.family [ Element.Font.typeface "Asap Condensed" ]
-    , Element.Font.color (Element.rgb255 255 255 255)
+    , Element.Font.color (Element.rgb255 0 0 0)
     ]
 
 
