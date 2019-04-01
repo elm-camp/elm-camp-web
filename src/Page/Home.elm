@@ -56,7 +56,7 @@ We're limiting this event to 25 people so you get the most one-on-one time possi
 
 | Trainers
     | Trainer
-        name = Matt Griffith
+        name = Matthew Griffith
         imageUrl = /assets/matt.jpg
         bio = Author of elm-ui, elm-markup, elm-style-animation, and Why Elm.
 
