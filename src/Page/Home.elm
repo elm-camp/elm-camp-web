@@ -33,60 +33,23 @@ parsedMarkup =
 markupBody : String
 markupBody =
     """| Title
-    elm-camp
+    Who wants to go to Elm Camp?!
 
-You love Elm. It lets you change your code fearlessly! But...
+Interested in spending 3 days with the creators of Elm GraphQL and Elm UI?
+
+It'll be a masterclass workshop covering
+
 | List
-    - Did that CSS you added actually do anything?
-    - Did it /break something totally unrelated/?
-    - Did your API change break a JSON Decoder?
+    - Type-safety and flexibility across APIs with Elm GraphQL
+    - Unrivaled styling experience with Elm UI
+    - Incremental techniques for adopting these libraries for your codebase
+    - Best practices you can’t learn from just browsing the docs
 
-Imagine if changing your API requests and styling was as bulletproof and easy as changing the rest of your Elm app!
 
-| Header
-    Who Is elm-camp For?
+We want to give you so many practical, implementable techniques that you're a :rocketship: with your typesafe app.  This'll cover the best practices we've encountered.
 
-elm-camp is a great fit for you if you are:
-| List
-    - Comfortable with Elm basics, but looking to level up.
+We're limiting this event to 25 people so you get the most one-on-one time possible and connect with everyone there.  It'll be like going to summer camp!
 
-| Header
-    Master The Libraries That Make Elm /Even More Elm/
-
-elm-camp is a 3-day hands-on training retreat where you'll master elm-ui and elm-graphql. You'll come away with a full grasp of both libraries' fundamentals and best practices, as taught by the library authors themselves.
-
-| Header
-    Schedule
-
-| Subheader
-    Day 1
-
-elm-ui Masterclass by Matthew Griffith
-
-{Link|>> Learn more about elm-ui.| url = https://www.youtube.com/watch?v=Ie-gqwSHQr0 }
-
-| Subheader
-    Day 2
-
-elm-graphql Masterclass by Dillon Kearns
-
-{Link|>> Learn more about elm-graphql. | url = https://www.youtube.com/watch?v=memIRXFSNkU }
-
-| Subheader
-    Day 3
-
-Apply everything you've learned to build an app with elm-ui and elm-graphql. We'll supply you with a GraphQL API, some inspiration, and expert guidance from all of our trainers.
-
-| Header
-    Be the First to Know!
-
-There are limited seats! If you sign up here, you'll be the first to know when you can get your tickets, and we'll give you a special discount as thanks for showing your enthusiasm!
-
-<>
-
-| Signup
-
-<>
 
 | Header
     The Organizers
@@ -105,14 +68,8 @@ There are limited seats! If you sign up here, you'll be the first to know when y
     imageUrl = /assets/dan.jpg
     bio = Dan is an elm developer who started his career as a screenwriter. He has written for film, tv, and video games. Dan lives in northern NJ with his fianceé and their dog, and just finished a batch at Recurse Center.
 
-| SocialBadges
-    | Badge
-        url = https://twitter.com/elmcamp
-        icon = fab fa-twitter
-    | Badge
-        url = https://github.com/elm-camp/elm-camp-web
-        icon = fab fa-github
-    | Badge
-        url = https://www.linkedin.com/groups/13683764/
-        icon = fab fa-linkedin-in
+
+<>
+
+| Signup
 """
