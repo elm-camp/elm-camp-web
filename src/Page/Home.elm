@@ -70,9 +70,10 @@ We're limiting this event to 25 people so you get the most one-on-one time possi
         bio = Co-organizer of elm Europe. Author of elm-media.
 
 | SignupBox
-    Sign up here to stay informed as we announce:
+    | Header
+        Stay Informed About Elm Camp
     | List
-        - Official date and location
+        - Official date and location announcement
         - Early bird ticket sale
 
     We’ll also notify you of our live coding streams that will give you a preview of some of the techniques you’ll learn at elm-camp:

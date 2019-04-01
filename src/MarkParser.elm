@@ -51,13 +51,7 @@ document =
                 (List.map (\view -> view model) children)
         )
         (Mark.manyOf
-            [ Mark.Default.header
-                [ Font.size 36
-                , Font.family [ Font.typeface "Asap Condensed" ]
-                , Font.center
-                , Font.color primaryColor
-                ]
-                defaultText
+            [ header
             , trainers
             , subheader
                 [ Font.size 24
@@ -85,6 +79,17 @@ document =
             , topLevelText
             ]
         )
+
+
+header : Mark.Block (model -> Element msg)
+header =
+    Mark.Default.header
+        [ Font.size 36
+        , Font.family [ Font.typeface "Asap Condensed" ]
+        , Font.center
+        , Font.color primaryColor
+        ]
+        defaultText
 
 
 subheader : List (Element.Attribute msg) -> Mark.Block (model -> List (Element msg)) -> Mark.Block (model -> Element msg)
@@ -165,6 +170,7 @@ signupBox =
         (Mark.manyOf
             [ list
             , topLevelText
+            , header
             ]
         )
 
