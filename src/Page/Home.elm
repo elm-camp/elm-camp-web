@@ -69,7 +69,7 @@ We're limiting this event to 25 people so you get the most one-on-one time possi
         imageUrl = /assets/dan.jpg
         bio = Co-organizer of elm Europe. Author of elm-media.
 
-| Signup
+| SignupBox
     Sign up here to stay informed as we announce:
     | List
         - Official date and location

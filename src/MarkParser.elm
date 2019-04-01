@@ -69,7 +69,7 @@ document =
             , title
             , list
             , image
-            , signup
+            , signupBox
             , Mark.Default.monospace
                 [ Element.spacing 5
                 , Element.padding 24
@@ -143,9 +143,9 @@ trainers =
         (Mark.manyOf [ trainer ])
 
 
-signup : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)
-signup =
-    Mark.block "Signup"
+signupBox : Mark.Block ({ model | dimensions : Dimensions, refId : Maybe String } -> Element msg)
+signupBox =
+    Mark.block "SignupBox"
         (\children model ->
             Element.textColumn
                 [ Element.centerX
