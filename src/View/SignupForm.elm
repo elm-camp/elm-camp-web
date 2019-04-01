@@ -107,7 +107,7 @@ submitButton =
         , style "font-size" "18px"
         , style "font-family" "Open Sans"
         , style "margin-top" "10px"
-        , style "width" "220px"
+        , style "width" "100%"
         , style "height" "55px"
         ]
         []
