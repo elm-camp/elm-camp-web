@@ -63,7 +63,7 @@ We're limiting this event to 25 people so you get the most one-on-one time possi
     | Trainer
         name = Dillon Kearns
         imageUrl = /assets/dillon.jpg
-        bio = Author of elm-graphql. He’s the founder of Incremental Elm where he helps teams learn elm practices without finding them the hard way.
+        bio = Author of elm-graphql. He’s the founder of Incremental Elm where he helps teams master elm techniques without finding them the hard way.
     | Trainer
         name = Dan Abrams
         imageUrl = /assets/dan.jpg
