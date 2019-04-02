@@ -36,6 +36,18 @@ defaultText =
                     [ Font.color highlightColor
                     ]
                 ]
+            , code =
+                [ Font.color (Element.rgba255 210 40 130 1)
+                , Background.color
+                    (Element.rgba 0 0 0 0.04)
+                , Border.rounded 2
+                , Element.paddingXY 5 3
+                , Font.size 16
+                , Font.family
+                    [ Font.typeface "Roboto Mono"
+                    , Font.sansSerif
+                    ]
+                ]
         }
 
 

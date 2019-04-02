@@ -35,13 +35,13 @@ markupBody =
     """| Title
     Who wants to go to Elm Camp?!
 
-Interested in spending 3 days with the creators of Elm GraphQL and Elm UI?
+Interested in spending 3 days with the creators of {Code|elm-graphql} and {Code|elm-ui}?
 
 The Masterclass workshops will cover:
 
 | List
-    - End-to-end type-safety from client to server with Elm GraphQL
-    - Unrivaled styling experience with Elm UI
+    - End-to-end type-safety from client to server with {Code|elm-graphql}
+    - Unrivaled styling experience with {Code|elm-ui}
     - Incremental techniques for adopting these libraries for your codebase
     - Best practices you can’t learn from just browsing the docs
 
@@ -58,16 +58,16 @@ We're limiting this event to 25 people so you get the most one-on-one time possi
     | Trainer
         name = Matthew Griffith
         imageUrl = /assets/matt.jpg
-        bio = Author of elm-ui, elm-markup, elm-style-animation, and Why Elm.
+        bio = Author of {Code|elm-ui}, {Code|elm-markup}, {Code|elm-style-animation}, and *Why Elm*.
 
     | Trainer
         name = Dillon Kearns
         imageUrl = /assets/dillon.jpg
-        bio = Author of elm-graphql. Founder of Incremental Elm, where his mission is to help you master elm best practices without finding them the hard way.
+        bio = Author of {Code|elm-graphql}. Founder of Incremental Elm, where his mission is to help you master elm best practices without finding them the hard way.
     | Trainer
         name = Dan Abrams
         imageUrl = /assets/dan.jpg
-        bio = Co-organizer of elm Europe. Author of elm-media.
+        bio = Co-organizer of elm Europe. Author of {Code|elm-media}.
 
 | SignupBox
     | Header
